@@ -1,9 +1,15 @@
 #include <stdio.h>
+#include <string.h>
 
 struct ABC{
     int index;
-    int id;
-}
+    char id[20];
+};
+
+union XZY{
+    int index;
+    char id[20];
+};
 
 void pointer_demo(int x){
     int* myPointer; // pointer initialized
@@ -37,4 +43,18 @@ int main(){
 
     pointer_demo(10);
     array_demo();
+
+    struct ABC a1;
+
+    strcpy(a1.id, "123");
+    a1.index = 10;
+
+    printf("%d, %s\n ", a1.index, a1.id);
+
+    union XZY x1;
+    strcpy(x1.id, "ii");
+    x1.index = 99;
+
+    printf("%d, %s\n ", x1.index, x1.id);
+
 }
