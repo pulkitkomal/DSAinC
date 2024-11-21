@@ -51,10 +51,11 @@ int main(){
 
     printf("%d, %s\n ", a1.index, a1.id);
 
-    union XZY x1;
+    union XZY x1; // union can only save 1 memory value at a time
     strcpy(x1.id, "ii");
-    x1.index = 99;
+    printf("ID: %s\n", x1.id);
 
-    printf("%d, %s\n ", x1.index, x1.id);
+    x1.index = 99;
+    printf("Index: %d\n", x1.index);
 
 }
